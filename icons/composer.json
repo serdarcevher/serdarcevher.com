@@ -1,0 +1,14 @@
+{
+    "name": "serdarcevher/icons",
+    "description": "Icons and sprites handler for serdarcevher.com",
+    "type": "library",
+    "require": {
+        "sahtepetrucci/responsive-retina-css-sprites": "^0.5.0"
+    },
+    "authors": [
+        {
+            "name": "Serdar Cevher",
+            "email": "scevher@gmail.com"
+        }
+    ]
+}

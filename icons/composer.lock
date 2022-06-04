@@ -1,0 +1,78 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "28fd5f518fb11d31ae783c94a3e9defe",
+    "packages": [
+        {
+            "name": "sahtepetrucci/responsive-retina-css-sprites",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serdarcevher/responsive-retina-css-sprites.git",
+                "reference": "c6b1266f542a8a6aa36fb6b067b61a65d94e838f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serdarcevher/responsive-retina-css-sprites/zipball/c6b1266f542a8a6aa36fb6b067b61a65d94e838f",
+                "reference": "c6b1266f542a8a6aa36fb6b067b61a65d94e838f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-imagick": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sahtepetrucci\\SpritesGenerator\\Laravel\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sahtepetrucci\\SpritesGenerator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serdar Cevher",
+                    "email": "scevher@gmail.com",
+                    "homepage": "https://www.serdarcevher.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Responsive and retina-ready CSS sprites generator",
+            "homepage": "https://github.com/sahtepetrucci/responsive-retina-css-sprites",
+            "keywords": [
+                "css",
+                "generator",
+                "icon",
+                "png",
+                "responsive",
+                "retina",
+                "sprite"
+            ],
+            "time": "2020-06-17T23:17:53+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}
