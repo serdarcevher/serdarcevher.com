@@ -31,9 +31,9 @@ $collection = [
         'icon' => 'soundcloud.png'
     ],
     (object)[
-        'id' => 'spotify',
-        'name' => 'Spotify',
-        'icon' => 'spotify.png'
+        'id' => 'youtube',
+        'name' => 'YouTube',
+        'icon' => 'youtube.png'
     ],
 
 
@@ -63,9 +63,9 @@ $collection = [
         'icon' => 'santral-logo.png'
     ],
     (object)[
-        'id' => 'kolokyum',
-        'name' => 'Kolokyum',
-        'icon' => 'kolokyum.png'
+        'id' => 'smardish',
+        'name' => 'SmarDish',
+        'icon' => 'smardish.png'
     ],
 
     (object)[
