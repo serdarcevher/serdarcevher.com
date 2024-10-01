@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fill in the blanks with YDS vocabulary</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		#question {
+			font-weight: bold;
+			font-size: 1.8em;
+			margin-bottom: 20px;
+			text-align: center;
+			margin-top: 100px;
+		}
+
+		#options {
+			text-align: center;
+		}
+
+		.option {
+			display: inline-block;
+			border: 2px solid #357DED;
+			border-radius: 8px;
+			padding: 10px 20px;
+			margin: 10px;
+			cursor: pointer;
+			transition: 0.3s;
+			background-color: white;
+			font-size: 1.2em;
+		}
+
+		.option:hover {
+			background-color: #f0f0f0;
+		}
+
+		.correct {
+			border-color: green;
+			animation: blinkGreen 1s alternate infinite;
+		}
+
+		.wrong {
+			border-color: red;
+			animation: blinkRed 1s alternate infinite;
+		}
+
+		@keyframes blinkGreen {
+			0% {
+				background-color: white;
+			}
+
+			100% {
+				background-color: #d4edda;
+			}
+		}
+
+		@keyframes blinkRed {
+			0% {
+				background-color: white;
+			}
+
+			100% {
+				background-color: #f8d7da;
+			}
+		}
+
+		#nextButton,
+		#whyButton {
+			margin-top: 20px;
+			display: none;
+			float: right;
+			padding: 10px 20px;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.2em;
+			cursor: pointer;
+		}
+
+		#nextButton {
+			background-color: #29C379;
+		}
+
+		#whyButton {
+			background-color: red;
+			margin-right: 10px;
+		}
+
+		#nextButton:hover {
+			background-color: #249b65;
+		}
+
+		#score {
+			margin-bottom: 20px;
+			font-size: 1.2em;
+			text-align: center;
+		}
+
+		#fileInput {
+			display: block;
+			margin: 20px auto;
+		}
+
+		.question-mark {
+			display: inline-block;
+			margin-left: 10px;
+			font-size: 0.8em;
+			cursor: pointer;
+			padding: 4px;
+			padding-left: 8px;
+			padding-right: 8px;
+			border: 1px solid #357DED;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>YDS Doldurtan</h1>
+
+	<div id="score">Correct: 0 | Wrong: 0</div>
+
+	<input type="file" id="fileInput" accept=".csv" />
+	<div id="question"></div>
+	<div id="options"></div>
+	<button id="nextButton">Next</button>
+	<button id="whyButton">Why?</button>
+
+	<script>
+		let quizData = [];
+		let currentWord = null;
+		let correctAnswer = null;
+		let correctCount = 0;
+		let wrongCount = 0;
+		let aiLink = 'https://chat.openai.com/?model=gpt-4&q=';
+
+		let prompt = 'Bir fill in the blanks sorusu var. Soru: ';
+		let prompt2 = 'Benim verdiğim cevap şu: ';
+		let prompt3 = 'Ama doğru cevabın şu olduğunu öğrendim: ';
+		let prompt4 = '\n\nNeden? Açıklayabilir misin?';
+		let readyPrompt = '';
+
+		fetch('https://serdarcevher.com/yds/sentences.csv')
+			.then(response => response.text())
+			.then(content => {
+				parseCSV(content);
+				generateQuestion();
+				document.getElementById('fileInput').style.display = 'none'; // Hide file input once the file is loaded
+			})
+			.catch(error => {
+				console.error('Error loading CSV file:', error);
+			});
+
+		function parseCSV(data) {
+			const lines = data.split('\n');
+			lines.forEach(line => {
+				const firstCommaIndex = line.indexOf(','); // Find the first comma
+				if (firstCommaIndex !== -1) {
+					const word = line.slice(0, firstCommaIndex).trim().replace(/"/g, '');
+					const question = line.slice(firstCommaIndex + 1).trim().replace(/"/g, '');
+
+					quizData.push({ word, question });
+				}
+			});
+		}
+
+
+		function getRandomElement(arr) {
+			return arr[Math.floor(Math.random() * arr.length)];
+		}
+
+		function generateQuestion() {
+			// Reset UI
+			document.getElementById('options').innerHTML = '';
+
+			document.getElementById('nextButton').style.display = 'none';
+			document.getElementById('whyButton').style.display = 'none';
+
+
+			// Pick a random word
+			currentWord = getRandomElement(quizData);
+
+			// Pick a random sentence from the sentences array
+			let sentence = currentWord.question.replace(currentWord.word, '______');
+			let toBeReplaced = "**" + currentWord.word + "**"
+			sentence = sentence.replace(toBeReplaced, '______');
+
+			// Generate options: correct one and three random words
+			correctAnswer = currentWord.word;
+			const options = [correctAnswer];
+
+			while (options.length < 4) {
+				const randomWord = getRandomElement(quizData).word;
+				console.log(randomWord);
+				if (!options.includes(randomWord)) {
+					options.push(randomWord);
+				}
+			}
+
+			// Shuffle options
+			options.sort(() => Math.random() - 0.5);
+
+			// Display question
+			document.getElementById('question').innerHTML = sentence;
+
+			// Display options
+			options.forEach(option => {
+				const optionDiv = document.createElement('div');
+				optionDiv.className = 'option';
+				optionDiv.textContent = option;
+				optionDiv.setAttribute('data-option', option);
+				optionDiv.onclick = () => checkAnswer(optionDiv, option);
+				document.getElementById('options').appendChild(optionDiv);
+
+				
+				const questionMark = document.createElement('span');
+				questionMark.textContent = '?';
+				questionMark.className = 'question-mark';
+				questionMark.onclick = (e) => {
+					e.stopPropagation();
+					window.open('https://tureng.com/tr/turkce-ingilizce/' + option, '_blank');
+				}
+				optionDiv.appendChild(questionMark);
+				
+			});
+		}
+
+		function checkAnswer(optionDiv, selectedOption) {
+			if (selectedOption === correctAnswer) {
+				optionDiv.classList.add('correct');
+				correctCount++;
+			} else {
+				optionDiv.classList.add('wrong');
+				const correctOptionDiv = document.querySelector(`.option[data-option="${correctAnswer}"]`);
+				correctOptionDiv.classList.add('correct');
+				wrongCount++;
+
+				readyPrompt = prompt + "\"" + document.getElementById('question').textContent + "\" " + prompt2 + " \"" + selectedOption + "\" " + prompt3 + " \"" + correctAnswer + "\" " + prompt4;
+
+
+				document.getElementById('whyButton').style.display = 'block';
+
+			}
+
+			// Update score
+			updateScore();
+
+			// Show the next button
+			document.getElementById('nextButton').style.display = 'block';
+		}
+
+		function updateScore() {
+			document.getElementById('score').textContent = `Correct: ${correctCount} | Wrong: ${wrongCount}`;
+		}
+
+		document.getElementById('nextButton').addEventListener('click', function () {
+			generateQuestion();
+		});
+
+		document.getElementById('whyButton').addEventListener('click', function () {
+			window.open(aiLink + readyPrompt, '_blank');
+		});
+	</script>
+
+</body>
+
+</html>
