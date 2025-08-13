@@ -1,7 +1,7 @@
 /* Normal Resolution CSS /*/
 .items-spr {
 	display:inline-block;vertical-align:middle;
-	background-image:url('../images/items-1x.png?t=1670595051');
+	background-image:url('../images/items-1x.png?t=1755081681');
 	background-repeat:no-repeat;
 	background-size:1000% 200%;
 	width:16px;height:16px;
@@ -17,7 +17,7 @@ only screen and ( min-resolution: 200dpi),
 only screen and ( min-resolution: 1.25dppx)
 {
     .items-spr {
-       	background-image:url('../images/items-2x.png?t=1670595051');
+       	background-image:url('../images/items-2x.png?t=1755081681');
     }
 }
 
@@ -27,13 +27,15 @@ only screen and ( min-resolution: 1.25dppx)
 .items-spr-twitter{background-position:33.333333333333% 0%}
 .items-spr-soundcloud{background-position:44.444444444444% 0%}
 .items-spr-youtube{background-position:55.555555555556% 0%}
-.items-spr-off2class{background-position:66.666666666667% 0%}
-.items-spr-valizim{background-position:77.777777777778% 0%}
-.items-spr-suslu-sozluk{background-position:88.888888888889% 0%}
-.items-spr-pcnet{background-position:100% 0%}
-.items-spr-santral-sozluk{background-position:0% 100%}
-.items-spr-smardish{background-position:11.111111111111% 100%}
-.items-spr-bilgi{background-position:22.222222222222% 100%}
-.items-spr-gsl{background-position:33.333333333333% 100%}
+.items-spr-spotify{background-position:66.666666666667% 0%}
+.items-spr-applemusic{background-position:77.777777777778% 0%}
+.items-spr-off2class{background-position:88.888888888889% 0%}
+.items-spr-valizim{background-position:100% 0%}
+.items-spr-suslu-sozluk{background-position:0% 100%}
+.items-spr-pcnet{background-position:11.111111111111% 100%}
+.items-spr-santral-sozluk{background-position:22.222222222222% 100%}
+.items-spr-smardish{background-position:33.333333333333% 100%}
+.items-spr-bilgi{background-position:44.444444444444% 100%}
+.items-spr-gsl{background-position:55.555555555556% 100%}
 
-/* A total of 14 images are combined here. */
+/* A total of 16 images are combined here. */

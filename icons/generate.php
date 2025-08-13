@@ -35,6 +35,16 @@ $collection = [
         'name' => 'YouTube',
         'icon' => 'youtube.png'
     ],
+	(object)[
+        'id' => 'spotify',
+        'name' => 'Spotify',
+        'icon' => 'spotify.png'
+    ],
+	(object)[
+		'id' => 'applemusic',
+		'name' => 'Apple Music',
+		'icon' => 'applemusic.png'
+	],
 
 
     (object)[
