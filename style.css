@@ -1,0 +1,294 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 10px 0;
+}
+
+.container {
+  display: flex;
+  background-color: white;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  width: 304px;
+  height: 100vh;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 15px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.main-content {
+  flex: 1;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px;
+  padding-top: 30px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: black;
+}
+
+.profile-pic {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 32px;
+}
+.nav-links li {
+  padding: 5px;
+}
+.nav-links li.active {
+  background-color: #e7e6e6;
+}
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+.nav-links li:hover {
+  background-color: #e0e0e0;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+p.headline {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 14px 20px;
+  background-color: #e7e6e6;
+  color: color;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.action-button:hover {
+  background-color: #d4d4d4;
+}
+
+.work-thumbnail {
+  width: 100%;
+  max-width: 208px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.work-link .work-item {
+  transition: transform 0.2s ease;
+}
+.work-link:hover .work-item {
+  background-color: #f2f2f2;
+}
+
+.work-item {
+  display: flex;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  gap: 20px;
+}
+
+p.work-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+p.work-text {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#cv {
+  padding-bottom: 100px;
+}
+
+/* Timeline Styles */
+.cv-list.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.cv-list.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 20px;
+  bottom: 40px;
+  width: 2px;
+  background-color: black;
+}
+
+.cv-list.timeline li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.cv-list.timeline li:last-child {
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 1px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-content {
+  padding-left: 10px;
+}
+
+.timeline-content h4 {
+  margin: 0 0 8px 0;
+  padding-top: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.timeline-content span {
+  font-size: 14px;
+  color: #5c5c5c;
+}
+
+.timeline-content div.content {
+  color: black;
+  margin-top: 10px;
+  line-height: 24px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .work-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 40px;
+  }
+  .work-title {
+    margin-top: -10px;
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .main-content {
+    padding: 20px 15px;
+    padding-top: 15px;
+  }
+
+  .work-thumbnail {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .sidebar {
+    width: 200px;
+  }
+}
