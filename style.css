@@ -292,3 +292,7 @@ p.work-text {
     width: 200px;
   }
 }
+
+.text-left {
+  text-align: left !important;
+}
