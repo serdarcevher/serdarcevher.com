@@ -1,433 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-29654245-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Serdar Cevher</title>
+	<style>
+		html {
+			height: 100%;
+			background-color: #0a1128;
+		}
 
-		gtag('config', 'UA-29654245-1');
-	</script>
-	<title>Serdar Cevher - Senior Full-Stack Developer | Product Builder | Creative Storyteller</title>
-	<link rel="stylesheet" href="style.css">
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="description"
-		content="I bridge the gap between code and creativity. As a co-founder and CTO, I've led technical teams at startups like Auglinn and Off2Class.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Serdar Cevher">
+		body {
+			height: 100%;
+			margin: 0;
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			/* Lacivertten koyu griye gradient */
+			background: linear-gradient(135deg, #0a1128 0%, #2b2b2b 100%);
+			background-attachment: fixed;
+			color: #ffffff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+
+		.container {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 24px;
+			animation: fadeIn 1.5s ease-in-out;
+		}
+
+		.profile-pic {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 2px solid rgba(255, 255, 255, 0.1);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			background-color: rgba(255, 255, 255, 0.05);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.profile-pic:hover {
+			transform: scale(1.05);
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+		}
+
+		.tagline {
+			font-size: 1.25rem;
+			font-weight: 300;
+			letter-spacing: 2px;
+			opacity: 0.85;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	</style>
 </head>
 
 <body>
 	<div class="container">
-		<aside class="sidebar">
-
-			<img src="img/profile.webp" alt="Serdar Cevher's Profile Picture" class="profile-pic">
-
-			<ul class="nav-links">
-				<li class="active"><a href="#home">Home</a></li>
-				<li><a href="#featured-projects">Featured Projects</a></li>
-				<li><a href="#cv">CV</a></li>
-				<li><a href="#creative-portfolio">Other Than Code</a></li>
-				<li><a href="mailto:scevher@gmail.com">Contact</a></li>
-			</ul>
-
-		</aside>
-		<main class="main-content">
-			<section id="home">
-				<p class="headline">Hey there 👋</p>
-				<h1 style="margin-top:-3px;margin-bottom:0;">I'm Serdar Cevher</h1>
-				<h2 style="margin-top:7px;">Senior Full-Stack Developer | Product Builder | Creative Storyteller</h2>
-
-				<p class="intro-lead">I bridge the gap between code and creativity. As a co-founder and CTO, I've led
-					technical teams at
-					startups like <a target="_blank" href="https://auglinn.com"><b><u>Auglinn</u></b></a> and
-					<a target="_blank" href="https://off2class.com"><b><u>Off2Class</u></b></a>. Beyond engineering,
-					I explore the intersection of technology and art through music and writing, crafting digital
-					experiences that resonate on a human level.
-				</p>
-
-				<p class="intro-secondary">After a creative sabbatical focused on music and writing, I am returning to
-					the tech world with a
-					renewed perspective. I now combine 10+ years of engineering expertise with the communication skills
-					of a
-					storyteller to build products that are not only functional but also meaningful.</p>
-
-				<br />
-				<a class="action-button" href="mailto:scevher@gmail.com">Let's
-					connect!</a>
-				<br /><br />
-			</section>
-
-			<section id="featured-projects">
-				<h2 style="margin-bottom:20px;">Featured Projects 🚀</h2>
-
-				<div class="projects-grid">
-					<!-- Auglinn -->
-					<a href="https://auglinn.com" target="_blank" class="project-link">
-						<div class="project-card">
-							<div class="project-media">
-								<video poster="img/auglinn-preview.webp" muted loop playsinline
-									onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-									<source src="img/auglinn.mp4" type="video/mp4">
-									Your browser does not support the video tag.
-								</video>
-							</div>
-							<div class="project-content">
-								<p class="project-title">Auglinn</p>
-								<p class="project-desc">AR-based social platform allowing users to leave persistent
-									digital
-									notes in the physical world. An innovative app running <b>Unity inside React
-										Native</b>,
-									supported by a Laravel-based web platform.</p>
-								<div class="project-tech-stack">
-									<span class="tech-tag">AR</span>
-									<span class="tech-tag">Mobile App</span>
-									<span class="tech-tag">React Native</span>
-									<span class="tech-tag">Unity</span>
-									<span class="tech-tag">C#</span>
-									<span class="tech-tag">Laravel</span>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- Off2Class -->
-					<a href="https://off2class.com" target="_blank" class="project-link">
-						<div class="project-card">
-							<div class="project-media">
-								<img src="img/off2class-preview.webp" alt="Off2Class Preview"
-									class="project-placeholder">
-							</div>
-							<div class="project-content">
-								<p class="project-title">Off2Class</p>
-								<p class="project-desc">Enterprise SaaS platform for ESL teachers and schools, trusted
-									by
-									100K+ users and 500+ schools globally since 2014. Architected using Laravel and
-									Vue.js.</p>
-								<div class="project-tech-stack">
-									<span class="tech-tag">Laravel</span>
-									<span class="tech-tag">Vue.js</span>
-									<span class="tech-tag">SaaS</span>
-									<span class="tech-tag">EdTech</span>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- Tarifmotoru -->
-					<a href="https://tarifmotoru.com" target="_blank" class="project-link">
-						<div class="project-card">
-							<div class="project-media">
-								<img src="img/tarifmotoru-preview.webp" alt="Tarifmotoru Preview">
-							</div>
-							<div class="project-content">
-								<p class="project-title">TarifMotoru</p>
-								<p class="project-desc">Ingredient-based recipe search engine with 7K+ signed up users.
-									Built with Laravel and Vue.js.
-									Also featuring <b>SmarDish</b> app for iOS and Android.
-								</p>
-								<div class="project-tech-stack">
-									<span class="tech-tag">Laravel</span>
-									<span class="tech-tag">Vue.js</span>
-									<span class="tech-tag">Mobile App</span>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- Numamind -->
-					<a href="https://numamind.com" target="_blank" class="project-link">
-						<div class="project-card">
-							<div class="project-media">
-								<img src="img/numamind-preview.png" alt="Numamind Preview">
-							</div>
-							<div class="project-content">
-								<p class="project-title">Numamind</p>
-								<p class="project-desc">Innovative AI-driven psychotherapy coaching app for mental
-									health.
-									Built with React Native.</p>
-								<div class="project-tech-stack">
-									<span class="tech-tag">AI</span>
-									<span class="tech-tag">Mobile App</span>
-									<span class="tech-tag">React Native</span>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- Ortakbellek -->
-					<a href="https://ortakbellek.com" target="_blank" class="project-link">
-						<div class="project-card">
-							<div class="project-media">
-								<img src="img/ortakbellek-preview.webp" alt="OrtakBellek Preview">
-							</div>
-							<div class="project-content">
-								<p class="project-title">OrtakBellek</p>
-								<p class="project-desc">An almanac and a collaborative knowledge-sharing platform
-									focused on
-									collective
-									memory of Türkiye.</p>
-								<div class="project-tech-stack">
-									<span class="tech-tag">Laravel</span>
-									<span class="tech-tag">Livewire</span>
-									<span class="tech-tag">Web</span>
-									<span class="tech-tag">Social</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-
-				<section id="cv">
-					<h2 style="margin-top:100px; margin-bottom:10px;">Profile</h2>
-					<p> My journey began as a tech journalist at PCNet magazine, evolving into a self-taught developer
-						and
-						eventually a technical leader. I have a deep passion for building products from scratch, leading
-						development teams, and solving complex problems. Today, I combine my engineering expertise with
-						my
-						creative pursuits, believing that the best technology is built with a human touch.</p>
-					<br />
-
-					<h2 style="margin-top:30px;margin-bottom:20px;">Education</h2>
-
-					<ul class="cv-list timeline">
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Istanbul Bilgi University, Media & Communication Systems</h4>
-								<span>2006 to 2012 at Dolapdere - Kuştepe - Eyüp, Istanbul, Türkiye</span>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Galatasaray High School</h4>
-								<span>1997 to 2006 at Beyoğlu, Istanbul, Türkiye </span>
-							</div>
-						</li>
-					</ul>
-
-					<h2 style="margin-top:60px;margin-bottom:20px;">Experience</h2>
-
-					<ul class="cv-list timeline">
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Co-founder & Mobile Developer</h4>
-								<span>2025 - Present at <a target="_blank"
-										href="https://numamind.com"><b><u>Numamind</u></b></a>, Istanbul, Türkiye</span>
-								<div class="content">
-									Leading the mobile development of an AI-driven psychotherapy coaching app.
-									Implementing an AI-led workflow using React Native to deliver personalized mental
-									health support.
-								</div>
-							</div>
-						</li>
-
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Co-founder & CTO</h4>
-								<span>2023 - 2024 at <a target="_blank"
-										href="https://auglinn.com"><b><u>Auglinn</u></b></a>, Istanbul, Türkiye</span>
-								<div class="content">
-									Led the technical strategy and development of an AR-based social platform.
-									Architected a hybrid system embedding Unity within React Native, allowing users to
-									leave persistent digital notes in the physical world. Built backend using Laravel.
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Technical Consultant</h4>
-								<span>2020 - 2022 at <a target="_blank"
-										href="https://off2class.com"><b><u>Off2Class</u></b></a>, Toronto, Canada</span>
-								<div class="content">
-									Mentored the development team and contributed to shaping the future product roadmap
-									and technical architecture.
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Technical Co-founder</h4>
-								<span>2013 - 2020 at <a target="_blank"
-										href="https://off2class.com"><b><u>Off2Class</u></b></a>, Toronto, Canada
-								</span>
-								<div class="content">
-									Acted as the sole developer during the startup's founding phase, later building and
-									leading the engineering team. Orchestrated the launch of the platform's second major
-									version using Laravel and Vue.js. Designed key features including student management
-									and homework systems. Scaled the product to serve 100K+ users and 500+ schools
-									globally.
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Freelance developer</h4>
-								<span>2009 - Present, Istanbul, Türkiye</span>
-								<div class="content text-left">
-									Delivered client and hobby projects including: evotrio.com, yetmiyor.net,
-									<a target="_blank" href="https://valizim.com"><b><u>valizim.com</u></b></a>,
-									santralsozluk.com,
-									art-core.tv, kolokyum.com, hotstop.com,
-									<a target="_blank" href="https://suslusozluk.com"><b><u>suslusozluk.com</u></b></a>,
-									<a target="_blank" href="https://terimler.org"><b><u>terimler.org</u></b></a>,
-									<a target="_blank"
-										href="https://decarbontool.com"><b><u>decarbontool.com</u></b></a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-dot"></div>
-							<div class="timeline-content">
-								<h4>Contributing Writer</h4>
-								<span>2009 - 2012 at PCNet, Istanbul, Türkiye </span>
-								<div class="content">
-									Wrote dozens of articles about technology, Linux, gadgets and more.
-								</div>
-							</div>
-						</li>
-					</ul>
-				</section>
-
-				<section id="creative-portfolio">
-					<h2 style="margin-bottom:10px;">Compositions 🎵</h2>
-
-					<div class="works-holder">
-
-						<a href="https://youtu.be/Mjf8bHPKeSg" target="_blank" class="work-link">
-							<div class="work-item">
-								<div class="work-thumbnail">
-									<img src="img/part-time-human.webp" alt="Part-time Human" class="thumbnail">
-								</div>
-								<div class="work-details">
-									<p class="work-title">Part-time Human</p>
-									<p class="work-text">A reflection on humans turning into robots and robots taking
-										over human jobs. A commentary on the strange world we live in.</p>
-								</div>
-							</div>
-						</a>
-
-						<hr />
-
-						<a href="https://youtu.be/ZEh9XoGXBh8" target="_blank" class="work-link">
-							<div class="work-item">
-								<div class="work-thumbnail">
-									<img src="img/go-easy.webp" alt="Go Easy with Yourself" class="thumbnail">
-								</div>
-								<div class="work-details">
-									<p class="work-title">Go Easy with Yourself</p>
-									<p class="work-text">A brief message from my childhood, after having a short phone
-										call.
-										He had some reminders for me not to take things too seriously.</p>
-								</div>
-							</div>
-						</a>
-
-					</div>
-
-					<br /><br />
-
-					<h2 style="margin-bottom:10px;">Translations 📖</h2>
-
-					<div class="works-holder">
-						<a href="https://www.canyayinlari.com/sokak-kodcusu-9786256377981" target="_blank"
-							class="work-link">
-							<div class="work-item">
-								<div class="work-thumbnail">
-									<img src="img/sokak-kodcusu.webp" alt="Sokak Kodcusu" class="thumbnail">
-								</div>
-								<div class="work-details">
-									<p class="work-title">Sokak Kodcusu (Street Coder)</p>
-									<p class="work-text">
-										I've translated the book "Sokak Kodcusu" (Street Coder) into Turkish. The
-										original
-										book was written by Sedat Kapanoglu (the founder of Eksi Sozluk) and originally
-										published
-										by
-										Manning.
-									</p>
-								</div>
-							</div>
-						</a>
-
-						<hr />
-
-						<a href="javascript:void(0)" class="work-link">
-							<div class="work-item">
-								<div class="work-thumbnail">
-									<img src="img/computer-terms.webp" alt="Glossary of computer and internet terms"
-										class="thumbnail">
-								</div>
-								<div class="work-details">
-									<p class="work-title">Glossary of computer and internet terms</p>
-									<p class="work-text">
-										A booklet containing detailed explanations of approximately 1,000 different
-										computer
-										terms that I compiled during my years as a PCNet editor.
-									</p>
-								</div>
-							</div>
-						</a>
-
-						<hr />
-					</div>
-				</section>
-		</main>
+		<!-- src kısmına kendi fotoğrafının yolunu veya adını (örneğin "profile.jpg") yazabilirsin -->
+		<img src="img/profile.webp" alt="Profile Picture" class="profile-pic" />
+		<div class="tagline">baştan başlıyor...</div>
 	</div>
-
-	<script>
-		// Scrollspy functionality
-		function updateActiveNav() {
-			const sections = document.querySelectorAll('section[id]');
-			const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-			let current = '';
-
-			sections.forEach(section => {
-				const sectionTop = section.offsetTop;
-				const sectionHeight = section.clientHeight;
-				if (window.pageYOffset >= (sectionTop - 200)) {
-					current = section.getAttribute('id');
-				}
-			});
-
-			navLinks.forEach(link => {
-				link.parentElement.classList.remove('active');
-				if (link.getAttribute('href') === '#' + current) {
-					link.parentElement.classList.add('active');
-				}
-			});
-		}
-
-		// Smooth scrolling for anchor links
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-				const target = document.querySelector(this.getAttribute('href'));
-				if (target) {
-					target.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-				}
-			});
-		});
-
-		// Update active nav on scroll
-		window.addEventListener('scroll', updateActiveNav);
-
-		// Update active nav on page load
-		window.addEventListener('load', updateActiveNav);
-	</script>
 </body>
 
 </html>
